@@ -7,9 +7,6 @@ This project visualizes how student habits such as sleep, exercise, and screen t
 - Interactive filtering by gender and age group
 - Modular JavaScript code structure
 
-## Demo
-Add a screenshot or GIF here later.
-
 ## Technologies
 - D3.js
 - HTML/CSS/JavaScript
