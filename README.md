@@ -1,11 +1,12 @@
 # Student Performance Visualization Dashboard
 
-This project visualizes how student habits such as sleep, exercise, and screen time influence academic performance.
+A multi-chart interactive dashboard built with D3.js to explore how lifestyle factors (sleep, screen time, exercise) influence academic performance. Includes cross-filtering, brushing, and dynamic linking across charts
 
 ## Features
-- Scatterplots and radar charts built with D3.js
-- Interactive filtering by gender and age group
-- Modular JavaScript code structure
+- Interactive scatterplot with radar chart on point-click
+- Cross-linked dashboard views with brushing and filtering
+- Charts include sunburst, boxplot, regression scatter, parallel coordinates, co-occurrence matrix, and density contour
+- Responsive, modular D3.js code
 
 ## Technologies
 - D3.js
