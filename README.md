@@ -5,7 +5,7 @@ A multi-chart interactive dashboard built with D3.js to explore how lifestyle fa
 ## Features
 - Interactive scatterplot with radar chart on point-click
 - Cross-linked dashboard views with brushing and filtering
-- Charts include sunburst, boxplot, regression scatter, parallel coordinates, co-occurrence matrix, and density contour
+- Charts include sunburst, boxplot, regression scatter, parallel coordinates, correlation matrix, and density contour
 - Responsive, modular D3.js code
 
 ## Technologies
