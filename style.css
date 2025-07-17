@@ -1,0 +1,240 @@
+body {
+    height: 100%;
+    margin: 0;
+    font: 14px sans-serif;
+}
+
+#credits {
+    font: 12px sans-serif;
+    padding-bottom: 1%;
+}
+
+.instructions {
+    color: red;
+}
+
+.optional {
+    color: darkgreen;
+}
+
+/* tooltip for the scatterplot */
+div.tooltip {
+    z-index: 1000;
+    position: absolute;
+    text-align: left;
+    padding: .2rem;
+    margin: 1rem;
+    background: #313639;
+    color: #f9f9f9;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: .7rem;
+}
+.legend-item {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    margin: 0.5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+.dataTableClass {
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px black solid;
+}
+
+.tableHeaderClass {
+    border: 2px solid black;
+    padding: 5px;
+    background-color: lightgray;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tableBodyClass {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+svg {
+    font: 10px sans-serif;
+}
+
+.container {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+    padding: 10px;
+    border: 0px solid black;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    fill: black;
+}
+
+fieldset {
+    border-width: 0;
+}
+
+#legend {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* the style for the close-button in the legend */
+.close {
+    display: inline-block;
+    padding: 1px 5px;
+    margin: 4px;
+    border: 1px solid black;
+    color: #000;
+    background: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
+/* the style for the circle in the legend */
+.color-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* the style for dots in the scatterplot */
+.dot {
+    cursor: pointer;
+}
+
+/* Style for dropdown containers above each chart */
+.chart-dropdown-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* space between labels/selects */
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+/* Style for labels within dropdown container */
+.chart-dropdown-container label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Style for the select dropdowns */
+.chart-dropdown-container select {
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    min-width: 150px; /* consistent width */
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 600px) {
+    .chart-dropdown-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .chart-dropdown-container select {
+        min-width: 100%;
+    }
+}
+
+.chart-loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.chart-loading::after {
+    content: "Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#chart1, #chart2, #chart3, #chart4, #chart5, #chart6 {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255,255,255,0.95);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Add spacing before Chart 3 and Chart 4 */
+#chart3, #chart4 {
+    margin-top: 40px; /* Adjust spacing as needed */
+}
+
+#chart8 {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+  

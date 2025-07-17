@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+* Data Visualization - Framework
+* Copyright (C) University of Passau
+*   Faculty of Computer Science and Mathematics
+*   Chair of Cognitive sensor systems
+* Maintenance:
+*   2025, Alexander Gall <alexander.gall@uni-passau.de>
+*
+* All rights reserved.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis of Student's Habits vs Performance</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <!-- include d3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- include jQueryUI -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <!-- PART 1: include dataVis script -->
+    <script src="dataVis.js"></script>
+    <!-- PART 2: include scripts for the dashboard -->
+    <script src="dashboard.js"></script>
+
+</head>
+
+<!-- call init function when page has loaded -->
+<body onload="init()">
+
+<h1>Analysis of Student's Habits vs Performence</h1>
+
+<!-- credits -->
+<div id="credits">
+    Created by <span class="instructions">Snigdha Raghavan Pradhipa & Vaishnavi Narasimhaiah Sathish</span>
+    for the Data Visualization Lecture at <a href="https://www.fim.uni-passau.de/digitale-bildverarbeitung"> Faculty of Computer
+    Science and Mathematics - Chair of Cognitive sensor systems - University of Passau</a>.
+</div>
+
+<!-- create buttons to select tabs -->
+<button class="tablink" onclick="openPage('DataLoading', this, 'blue')" id="defaultOpen" >Data Loading</button>
+<button class="tablink" onclick="openPage('BasicVisualization', this, 'blue')">Basic Visualization</button>
+<button class="tablink" onclick="openPage('Dashboard', this, 'blue')">Dashboard</button>
+
+<!-- Tab 1 -->
+<div id="DataLoading" class="tabcontent">
+
+    <!-- data selector -->
+    <p>Select your data here: <input id="upload" type="file"></p>
+
+    <!-- data table -->
+    <div id="dataTable"></div>
+
+</div>
+
+<!-- Tab 2 -->
+<div id="BasicVisualization" class="tabcontent">
+
+    <!-- scatterplot -->
+    <div class="container">
+        <!-- scatterplot menu -->
+        <h2>Scatterplot</h2>
+
+        <p>Select dimensions to be displayed here: </p>
+        <div id="menu">
+            <form action="#">
+                <fieldset>
+                    <label for="scatterX">x axis: </label>
+                    <select name="scatterX" id="scatterX">
+                    </select>
+                    <br/>
+                    <label for="scatterY">y axis: </label>
+                    <select name="scatterY" id="scatterY">
+                    </select>
+                    <br/>
+                    <label for="size">size: </label>
+                    <select name="size" id="size">
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+        <!-- scatterplot SVG -->
+        <div id="sp"></div>
+    </div>
+
+    <!-- radar chart -->
+    <div class="container">
+        <h2>Radar Chart</h2>
+        <!-- radar chart SVG -->
+        <div id="radar"></div>
+        <div id="legend">
+            <strong>Legend:</strong>
+            <div id="legend-items"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Tab 3 -->
+<div id="Dashboard" class="tabcontent">
+    <h1>Student Performence Dashboard</h1>
+    <button id="reset-all" style="margin-bottom: 20px;">Reset All Filters</button>
+
+
+    <!-- Grid container -->
+    <div class="dashboardGrid">
+
+        <!-- chart 1 -->
+        <div class="container">
+            <h2>How Categorical Factors Affect Academic Performance</h2>
+            <div class="chart-dropdown-container">
+                <label for="chart1-level1">Level 1:</label>
+                <select id="chart1-level1"></select>
+            
+                <label for="chart1-level2">Level 2:</label>
+                <select id="chart1-level2"></select>
+            
+                <label for="chart1-level3">Level 3:</label>
+                <select id="chart1-level3"></select>
+            
+                <label for="chart1-size">Value:</label>
+                <select id="chart1-size"></select>
+
+                <button id="reset-chart1" style="margin-top: 10px;">Reset Sunburst</button>
+
+            </div>
+            
+            <div id="chart1"></div>
+        </div>
+
+        <!-- chart 5 -->
+        <div class="container">
+            <h2 style="margin-top: 80px;">Variation in Performance Within Student Groups</h2>
+                <div class="chart-dropdown-container">
+                    <label for="chart5-x">Group by (X):</label>
+                    <select id="chart5-x"></select>
+                  
+                    <label for="chart5-y">Measure (Y):</label>
+                    <select id="chart5-y"></select>
+                </div>
+                <div id="chart5"></div>
+                </div>
+        
+    
+
+
+        <!-- Chart 3 -->
+    <div class="container">
+        <h2 style="margin-top: 80px;">Uncovering Relationships Between Study Habits and Performance</h2>
+        <div class="chart-dropdown-container">
+            <label for="chart3-x">X Axis:</label>
+            <select id="chart3-x"></select>
+            <label for="chart3-y">Y Axis:</label>
+            <select id="chart3-y"></select>
+        </div>
+        <div id="chart3"></div>
+  </div>
+  
+  <!-- Chart 4 -->
+    <div class="container">
+        <h2 style="margin-top: 80px;">Multivariate Patterns Behind Student Success</h2>
+    <div id="chart4"></div>
+  </div>
+
+
+    <!-- chart 7 -->
+        <div class="container">
+            <h2 style="margin-top: 80px;"> Linear Relationships Among Numerical Attributes</h2>
+    
+            <div id="chart7"></div>
+</div>
+
+<!-- Chart 8 -->
+<div class="container">
+    <h2 style="margin-top: 80px;">Chart 8: Study Habits vs Performance – Density Contour</h2>
+    <div class="chart-dropdown-container">
+      <label for="chart8-x">X Axis:</label>
+      <select id="chart8-x"></select>
+  
+      <label for="chart8-y">Y Axis:</label>
+      <select id="chart8-y"></select>
+    </div>
+    <div id="chart8"></div>
+  </div>
+  
+
+</div>
+
+<div id="tooltip" style="
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 12px;
+"></div>
+
+
+
+</body>
+</html>
