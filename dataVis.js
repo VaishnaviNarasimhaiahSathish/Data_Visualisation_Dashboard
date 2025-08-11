@@ -9,6 +9,7 @@
 * All rights reserved.
 */
 
+
 // scatterplot axes
 let xAxis, yAxis, xAxisLabel, yAxisLabel;
 // radar chart axes
